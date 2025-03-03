@@ -7,7 +7,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1E88B8] text-white py-8 sticky bottom-0 left-0 w-full"> {/* Fixed footer at the bottom */}
+    <footer className="bg-[#1E88B8] text-white py-8 bottom-0 left-0 w-full"> {/* Fixed footer at the bottom */}
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Integu Special Offers */}
         <div>
