@@ -17,8 +17,19 @@ const Header = () => {
           <NavItem
             label="Our Brands"
             menuItems={[
-              { href: "#", label: "Brands" },
-              { href: "#", label: "Innovative Ingredients" },
+              { href: "#", label: "Brands", subItems: [
+                { href: "#", label: "Skin Barrier Health / Atopic Dermatitis" },
+                { href: "#", label: "Acne / Acne Prone Skin" },
+                { href: "#", label: "Fungal Infectoin / Scalp Health" },
+                { href: "#", label: "Ageing Skin" },
+                { href: "#", label: "Sun Protection" },
+                { href: "#", label: "Hyperhidrosis" },
+                { href: "#", label: "Cleansing" },
+              ] },
+              { href: "#", label: "Innovative Ingredients", subItems: [
+                { href: "#", label: "Spherulite" },
+                { href: "#", label: "Redensyl" },
+              ] },
               { href: "#", label: "Regulatory Compliance" },
               { href: "#", label: "Product Standards" },
             ]}
@@ -46,8 +57,17 @@ const Header = () => {
             <NavItem
               label="Your Resources"
               menuItems={[
-                { href: "#", label: "HealthCare Partners" },
-                { href: "#", label: "Patients" },
+                { href: "#", label: "HealthCare Partners", subItems: [
+                  { href: "#", label: "Local & International Derm Meetings" },
+                  { href: "#", label: "Starter Dose Requests" },
+                  { href: "#", label: "Integu Special Offers" },
+                  { href: "#", label: "Contact Us For Anything" },
+                ] },
+                { href: "#", label: "Patients", subItems: [
+                  { href: "#", label: "Find a Dermatologist" },
+                  { href: "#", label: "Free EskeenSultation" },
+                  { href: "#", label: "Ask Us Anything About Skin" },
+                ] },
                 { href: "#", label: "Investors, Partners, Suppliers" },
               ]}
             />
