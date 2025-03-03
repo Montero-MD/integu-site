@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 
-const Search: React.FC = () => {
+interface SearchProps {
+  className?: string;
+}
+
+const Search: React.FC<SearchProps> = ({ className }) => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   return (
-    <div className="relative hidden md:block">
+    <div className={`relative hidden md:block ${className || ''}`}>
       <button
         className="text-[#474856] hover:text-[#023AA5]"
         onClick={() => setIsSearchOpen(!isSearchOpen)}
