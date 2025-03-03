@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import DropdownMenu from './DropdownMenu';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface NavItemProps {
   label: string;
@@ -15,7 +19,42 @@ const NavItem: React.FC<NavItemProps> = ({ label, menuItems }) => {
         className="text-[#474856] hover:text-[#023AA5] flex items-center"
         onMouseEnter={() => setIsOpen(true)}
       >
-        {label} <svg className="ml-1 h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+        {label}
+        <AnimatePresence mode="wait">
+          {menuItems ? (
+            isOpen ? (
+              <motion.div
+                key="expand-less"
+                initial={{ opacity: 0, y: -5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 5 }}
+                transition={{ duration: 0.2 }}
+              >
+                <ExpandLessIcon />
+              </motion.div>
+            ) : (
+              <motion.div
+                key="expand-more"
+                initial={{ opacity: 0, y: -5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 5 }}
+                transition={{ duration: 0.2 }}
+              >
+                <ExpandMoreIcon />
+              </motion.div>
+            )
+          ) : (
+            <motion.div
+              key="chevron-right"
+              initial={{ opacity: 0, x: -5 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 5 }}
+              transition={{ duration: 0.2 }}
+            >
+              <ChevronRightIcon />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </button>
       {menuItems && (
         <DropdownMenu isOpen={isOpen} onMouseLeave={() => setIsOpen(false)} menuItems={menuItems} />
