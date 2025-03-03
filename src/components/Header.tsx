@@ -7,7 +7,7 @@ import Search from './Search';
 
 const Header = () => {
   return (
-    <header className="bg-gray-50 bg-opacity-10 text-white fixed top-0 left-0 w-full py-4 z-10">
+    <header className="bg-gray-50 bg-opacity-10 text-white fixed top-0 left-0 w-full py-4 z-50">
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
         <Logo />
@@ -26,42 +26,36 @@ const Header = () => {
           <NavItem
             label="Our Initiatives"
             menuItems={[
-              { href: "#", label: "Item 1" },
-              { href: "#", label: "Item 2" },
-              { href: "#", label: "Item 3" },
+              { href: "#", label: "New Products" },
+              { href: "#", label: "Integrated Distribution" },
+              { href: "#", label: "Patient Resources with Practitioners / Medical Societies" },
+              { href: "#", label: "PRIDE" },
+              { href: "#", label: "DRIVE" },
+              { href: "#", label: "INSTIGATTER" }
             ]}
           />
           <NavItem
             label="Our Story"
             menuItems={[
-              { href: "#", label: "Item 1" },
-              { href: "#", label: "Item 2" },
-              { href: "#", label: "Item 3" },
+              { href: "#", label: "Who We Are and What We Do" },
+              { href: "#", label: "Milestones" },
+              { href: "#", label: "Growth" },
+              { href: "#", label: "Structure and Leadership" },
             ]}
+          />
+            <NavItem
+              label="Your Resources"
+              menuItems={[
+                { href: "#", label: "HealthCare Partners" },
+                { href: "#", label: "Patients" },
+                { href: "#", label: "Investors, Partners, Suppliers" },
+              ]}
+            />
+          <NavItem
+            label="Your Feedback"
           />
           <NavItem
             label="Your Career"
-            menuItems={[
-              { href: "#", label: "Item 1" },
-              { href: "#", label: "Item 2" },
-              { href: "#", label: "Item 3" },
-            ]}
-          />
-          <NavItem
-            label="Your Feedback"
-            menuItems={[
-              { href: "#", label: "Item 1" },
-              { href: "#", label: "Item 2" },
-              { href: "#", label: "Item 3" },
-            ]}
-          />
-          <NavItem
-            label="Your Resources"
-            menuItems={[
-              { href: "#", label: "Item 1" },
-              { href: "#", label: "Item 2" },
-              { href: "#", label: "Item 3" },
-            ]}
           />
         </nav>
 
