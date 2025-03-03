@@ -9,12 +9,11 @@ const Search: React.FC<SearchProps> = ({ className }) => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   return (
-    <div className={`relative hidden md:block ${className || ''}`}>
+    <div className={`relative ${className || ''}`}>
       <button
         className="text-[#474856] hover:text-[#023AA5]"
         onClick={() => setIsSearchOpen(!isSearchOpen)}
       >
-        {/* Search Icon Placeholder - Replace with actual icon later */}
         <SearchIcon fontSize='large'/>
       </button>
       {isSearchOpen && (
@@ -24,7 +23,7 @@ const Search: React.FC<SearchProps> = ({ className }) => {
               <input
                 type="text"
                 className="block w-full sm:text-sm text-[#474856]"
-                placeholder="Search..."
+                placeholder="Search Integu..."
               />
             </div>
           </div>

@@ -94,7 +94,7 @@ const Header = () => {
         {/* Logo */}
         <Logo />
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-6 md:flex">
+        <div className="hidden lg:flex items-center space-x-6">
           <nav className="flex items-center space-x-6">
           {navItems.map((navItem, index) => (
             <NavItem
@@ -108,18 +108,19 @@ const Header = () => {
 
 
         {/* Mobile Menu Button */}
-        <div className="block md:hidden">
+        <div className="block lg:hidden">
           <button onClick={toggleMobileMenu} className="text-[#474856] hover:text-[#023AA5] focus:outline-none">
             {isMobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
           </button>
         </div>
 
         {/* Search Icon - Moved to be after menu button for mobile layout */}
-        <Search className="ml-4 md:ml-0" />
+        <Search className="hidden lg:block ml-4 md:ml-0" />
       </div>
 
       {/* Mobile Menu */}
-      <div className={`md:hidden absolute top-full left-0 w-full bg-white text-gray-800 shadow-lg ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
+      <div className={`lg:hidden absolute top-full left-0 w-full bg-white text-gray-800 shadow-lg ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
+        <Search className='block lg:hidden mb-2 text-right'/>
         <nav className="flex flex-col p-4">
           {navItems.map((navItem, index) => (
             <NavItem

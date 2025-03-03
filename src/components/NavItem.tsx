@@ -8,16 +8,17 @@ import Link from 'next/link';
 interface NavItemProps {
   label: string;
   menuItems?: { href: string; label: string; subItems?: { href: string; label: string }[] }[];
+  className?: string;
 }
 
-const NavItem: React.FC<NavItemProps> = ({ label, menuItems }) => {
+const NavItem: React.FC<NavItemProps> = ({ label, menuItems, className }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeMenuItemIndex, setActiveMenuItemIndex] = useState<number | null>(null);
 
   return (
-    <div className="relative group" onMouseLeave={() => { setIsOpen(false); setActiveMenuItemIndex(null); }}>
+    <div className={`relative group ${className || ''}`} onMouseLeave={() => { setIsOpen(false); setActiveMenuItemIndex(null); }}>
       <button
-        className="text-[#474856] hover:text-[#023AA5] flex items-center"
+        className={`text-[#474856] hover:text-[#023AA5] ${isOpen ? 'text-[#023AA5]' : ''} flex items-center`}
         onMouseEnter={() => setIsOpen(true)}
       >
         {label}
